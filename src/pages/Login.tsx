@@ -1,5 +1,7 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
-const Login: React.FC = (): ReactElement => <h1>Login Page</h1>;
+const Login = () => {
+  return <h1>Login Page</h1>;
+};
 
 export { Login };

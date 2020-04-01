@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Header } from "components/Header/Header";
 import { colors } from "shared/styles";
@@ -12,11 +12,13 @@ interface WrapperProps {
   children?: React.ReactNode;
 }
 
-const Wrapper: React.FC<WrapperProps> = ({ children }): ReactElement => (
-  <Container>
-    <Header />
-    {children}
-  </Container>
-);
+const Wrapper = ({ children }: WrapperProps) => {
+  return (
+    <Container>
+      <Header />
+      {children}
+    </Container>
+  );
+};
 
 export { Wrapper };
