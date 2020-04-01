@@ -1,2 +1,7 @@
-export { Wrapper } from "./Wrapper/Wrapper";
-export { Header } from "./Header/Header";
+import Wrapper from "./Wrapper";
+import Header from "./Header";
+
+export {
+    Wrapper,
+    Header
+};

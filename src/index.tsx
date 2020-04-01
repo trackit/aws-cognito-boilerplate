@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { routes } from "shared/routes.config";
-import { Wrapper } from "components";
 import { GlobalStyle } from "shared/styles";
+import { Wrapper } from "components";
 
 ReactDOM.render(
   <React.StrictMode>

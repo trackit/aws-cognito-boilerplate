@@ -4,4 +4,4 @@ const Header = () => {
   return <div>NAVBAR HERE</div>;
 };
 
-export { Header };
+export default Header;
