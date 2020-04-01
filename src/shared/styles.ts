@@ -8,10 +8,10 @@ interface IColors {
 }
 
 export const colors: IColors = {
-  primary: "#222831",
-  secondary: "#393E46",
-  primaryTextColor: "#D65A31",
-  secondaryTextColor: "#EEEEEE"
+  primary: "	#232f3e",
+  secondary: "#000000",
+  primaryTextColor: "#ff9900",
+  secondaryTextColor: "#146eb4"
 };
 
 export const GlobalStyle = createGlobalStyle`
