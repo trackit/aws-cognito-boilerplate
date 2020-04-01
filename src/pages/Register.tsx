@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
 
-export default (): ReactElement => {
-  return <h1>Register Page</h1>;
-};
+const Register: React.FC = (): ReactElement => <h1>Register Page</h1>;
+
+export { Register };

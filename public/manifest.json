@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "aws-boilerplate-cognito",
+  "name": "aws-boilerplate-cognito",
   "icons": [
     {
       "src": "favicon.ico",

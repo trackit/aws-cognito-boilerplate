@@ -3,17 +3,22 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { routes } from "shared/routes.config";
+import { Wrapper } from "components";
+import { GlobalStyle } from "shared/styles";
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
     <Router>
-      <Switch>
-        {routes.map((route, key) => (
-          <Route exact={route.exact} key={key} path={route.path}>
-            {route.component}
-          </Route>
-        ))}
-      </Switch>
+      <Wrapper>
+        <Switch>
+          {routes.map((route, key) => (
+            <Route exact={route.exact} key={key} path={route.path}>
+              {route.component}
+            </Route>
+          ))}
+        </Switch>
+      </Wrapper>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
