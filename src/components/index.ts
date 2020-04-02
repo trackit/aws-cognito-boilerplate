@@ -1,11 +1,11 @@
-import Wrapper from "./Wrapper";
-import Header from "./Header";
-import Burger from "./Burger";
-import LinkWrapper from "./LinkWrapper";
+import PageWrapper from "./PageWrapper";
+import Header from "./Navbar/Header";
+import BurgerButton from "./Navbar/BurgerButton";
+import Container from "./Container";
 
 export {
-    Wrapper,
+    PageWrapper,
     Header,
-    Burger,
-    LinkWrapper
+    BurgerButton,
+    Container
 };

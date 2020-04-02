@@ -1,13 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
-interface IColors {
+interface AppColors {
   primary: string;
   secondary: string;
   primaryTextColor: string;
   secondaryTextColor: string;
 }
 
-export const colors: IColors = {
+export const colors: AppColors = {
   primary: "	#232f3e",
   secondary: "#000000",
   primaryTextColor: "#ff9900",
@@ -15,7 +15,6 @@ export const colors: IColors = {
 };
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
   html, body, #root, #root>div {
     margin: 0;
     padding: 0;

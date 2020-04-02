@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import React from "react";
 
-const StyledBurger = styled.button<any>`
-  display: flex;
+const Button = styled.button<{ open: boolean }>`
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
   height: 1.95rem;
   background: transparent;
   border: none;
-  cursor: pointer;
   padding: 0;
+  cursor: pointer;
   &:focus {
     outline: none;
   }
@@ -20,7 +20,6 @@ const StyledBurger = styled.button<any>`
     background: white;
     border-radius: 10px;
     transition: all 0.3s linear;
-    position: relative;
     transform-origin: 1px;
     :first-child {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
@@ -33,17 +32,28 @@ const StyledBurger = styled.button<any>`
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
+  @media screen and (max-width: 780px) {
+    display: flex;
+    margin: 20px 20px 0 auto;
+  }
 `;
 
-const Burger = () => {
-  const [open, setOpen] = useState(false);
+interface Props {
+  onClick: () => void;
+  open: boolean;
+}
+
+/*
+  <BurgerButton> is used inside the <Header> component when the screen breakpoint is reached
+*/
+const BurgerButton = ({ onClick, open }: Props) => {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+    <Button open={open} onClick={onClick}>
       <div />
       <div />
       <div />
-    </StyledBurger>
+    </Button>
   );
 };
 
-export default Burger;
+export default BurgerButton;
