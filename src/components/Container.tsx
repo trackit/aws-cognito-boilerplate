@@ -5,7 +5,10 @@ import styled from "styled-components";
 */
 
 const Container = styled.div`
-  padding: 10px 30px;
+  padding: 10px 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 `;
 
 export default Container;

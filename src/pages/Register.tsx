@@ -1,12 +1,14 @@
 import React from "react";
-import { Container } from "components";
+import styled from "styled-components";
+import { Container} from "components";
+
+const RegisterContainer = styled(Container)`
+  justify-content: center;
+  align-items: center;
+`;
 
 const Register = () => {
-  return (
-    <Container>
-      <h1>Register Page</h1>
-    </Container>
-  );
+  return <RegisterContainer></RegisterContainer>;
 };
 
 export default Register;

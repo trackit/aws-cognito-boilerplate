@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import { colors } from "shared/styles";
 
 const Button = styled.button<{ open: boolean }>`
   display: none;
@@ -17,7 +18,7 @@ const Button = styled.button<{ open: boolean }>`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: white;
+    background: ${colors.primaryTextColor};
     border-radius: 10px;
     transition: all 0.3s linear;
     transform-origin: 1px;
