@@ -5,7 +5,7 @@ import { colors } from "shared/styles";
 import { LinkProps } from "react-router-dom";
 
 const AppContainer = styled.div`
-  background-color: ${colors.primary};
+  background-color: ${colors.dark};
   color: ${colors.primaryTextColor};
 `;
 
@@ -19,11 +19,7 @@ interface Props {
   It is here that a header/navbar or a footer have to be added if needed
 */
 const PageWrapper = ({ children, links }: Props) => {
-  return (
-    <AppContainer>
-      {children}
-    </AppContainer>
-  );
+  return <AppContainer>{children}</AppContainer>;
 };
 
 export default PageWrapper;
