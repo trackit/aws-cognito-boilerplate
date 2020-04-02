@@ -1,8 +1,7 @@
-import React from "react";
 import styled from "styled-components";
 import { colors } from "shared/styles";
 
-const InputStyle = styled.input`
+const Input = styled.input`
   border: 1px solid grey;
   border-radius: 4px;
   box-sizing: border-box;
@@ -32,9 +31,5 @@ const InputStyle = styled.input`
     outline: none;
   }
 `;
-
-const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => {
-  return <InputStyle {...props} />;
-};
 
 export default Input;
