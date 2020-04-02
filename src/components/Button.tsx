@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { colors } from "shared/styles";
 
-const Button = styled.button`
+const ButtonStyle = styled.button`
   background-color: transparent;
   border: 2px solid ${colors.secondary};
   border-radius: 50px;
@@ -25,5 +25,9 @@ const Button = styled.button`
     cursor: pointer;
   }
 `;
+
+const Button = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+  return <ButtonStyle {...props}>{props.children}</ButtonStyle>;
+};
 
 export default Button;
