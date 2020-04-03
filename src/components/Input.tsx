@@ -10,7 +10,6 @@ const Input = styled.input`
   line-height: 18px;
   padding: 7px 10px;
   width: 100%;
-  max-width: 500px;
   margin-bottom: 20px;
   color: ${colors.primaryTextColor};
   background-color: ${colors.primary};
