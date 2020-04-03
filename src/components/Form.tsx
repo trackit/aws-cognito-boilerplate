@@ -11,7 +11,7 @@ const Form = styled.form`
   border: 2px solid ${colors.primaryTextColor};
   background-color: ${colors.primary};
   @media screen and (max-width: 780px) {
-    width: inherit;
+    width: 100%;
     border: inherit;
     padding: 20px 10px;
     background-color: ${colors.primary};
