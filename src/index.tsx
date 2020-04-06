@@ -12,7 +12,7 @@ Amplify.configure(amplifyConfig);
 
 const App = () => {
   return (
-    <React.StrictMode>
+    <React.Fragment>
       <GlobalStyle />
       <Router>
         <PageWrapper links={navbarLinks}>
@@ -28,11 +28,11 @@ const App = () => {
           </Switch>
         </PageWrapper>
       </Router>
-    </React.StrictMode>
+    </React.Fragment>
   );
 };
 
-ReactDOM.render(App, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
