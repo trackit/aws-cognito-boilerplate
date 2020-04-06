@@ -1,12 +1,11 @@
-import { Login, Register } from "pages";
+import { Auth } from "pages";
 import { RouteProps, LinkProps } from "react-router-dom";
 
 /*
   Those routes are used inside index.tsx by react-router-dom to dynamically generate routing
 */
 export const routes: RouteProps[] = [
-  { path: "/login", component: Login, exact: true },
-  { path: "/register", component: Register }
+  { path: "/", component: Auth, exact: true },
 ];
 
 /*
@@ -14,5 +13,5 @@ export const routes: RouteProps[] = [
 */
 export const navbarLinks: LinkProps[] = [
   { to: "/login", title: "Login" },
-  { to: "/register", title: "Register" }
+  { to: "/register", title: "Register" },
 ];
