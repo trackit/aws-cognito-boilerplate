@@ -1,33 +1,26 @@
 import { createGlobalStyle } from "styled-components";
-
-interface AppColors {
-  primary: string;
-  secondary: string;
-  success: string;
-  dark: string;
-  primaryTextColor: string;
-  secondaryTextColor: string;
-}
+import { AppColors } from "shared/interfaces/styles.interface";
 
 export const colors: AppColors = {
-  primary: "#FFFFFF",
+  primary: "#121212",
   secondary: "#D4453D",
-  dark: '#222227',
+  dark: "#222227",
   success: "#6EBC6E",
-  primaryTextColor: "#272C2F",
-  secondaryTextColor: "#FFFFFF"
+  primaryTextColor: "#FFFFFF",
+  secondaryTextColor: "#4BB2F9",
 };
 
 export const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
   html, body, #root, #root>div {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: ${colors.dark};
     font-family: 'Montserrat', sans-serif;
-  }
-  * {
-    box-sizing: border-box;
   }
 `;
