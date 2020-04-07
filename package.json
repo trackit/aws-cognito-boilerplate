@@ -10,6 +10,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "aws-amplify": "^3.0.5",
+    "aws-amplify-react": "^4.1.4",
     "global": "^4.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

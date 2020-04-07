@@ -1,31 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { routes, navbarLinks } from "shared/routes.config";
 import { GlobalStyle } from "shared/styles";
-import { PageWrapper } from "components";
+import { signUpConfig, amplifyConfig } from "shared/amplify.config";
+import { isAuthenticated, Config } from "shared/utils";
+import { Authenticator, UsernameAttributes } from "aws-amplify-react";
+import "@aws-amplify/ui/dist/style.css";
+import App from "App";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <GlobalStyle />
-    <Router>
-      <PageWrapper links={navbarLinks}>
-        <Switch>
-          {routes.map((route, key) => (
-            <Route
-              exact={route.exact}
-              key={key}
-              path={route.path}
-              component={route.component}
-            />
-          ))}
-        </Switch>
-      </PageWrapper>
-    </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+Config.getInstance().init(amplifyConfig);
+
+const AppWrapper = () => {
+  const [isAuth, setIsAuth] = useState<boolean>(false);
+  return (
+    <React.StrictMode>
+      <GlobalStyle />
+      <Authenticator
+        usernameAttributes={UsernameAttributes.EMAIL}
+        signUpConfig={signUpConfig}
+        onStateChange={(authState) => setIsAuth(isAuthenticated(authState))}
+      >
+        {isAuth && <App />}
+      </Authenticator>
+    </React.StrictMode>
+  );
+};
+
+ReactDOM.render(<AppWrapper />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
