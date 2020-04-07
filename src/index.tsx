@@ -13,9 +13,12 @@ ReactDOM.render(
       <PageWrapper links={navbarLinks}>
         <Switch>
           {routes.map((route, key) => (
-            <Route exact={route.exact} key={key} path={route.path}>
-              {route.component}
-            </Route>
+            <Route
+              exact={route.exact}
+              key={key}
+              path={route.path}
+              component={route.component}
+            />
           ))}
         </Switch>
       </PageWrapper>

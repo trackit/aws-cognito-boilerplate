@@ -9,8 +9,7 @@ const Input = styled.input`
   font-size: 14px;
   line-height: 18px;
   padding: 7px 10px;
-  max-width: 370px;
-  min-width: 300px;
+  width: 100%;
   margin-bottom: 20px;
   color: ${colors.primaryTextColor};
   background-color: ${colors.primary};
@@ -23,12 +22,15 @@ const Input = styled.input`
     border-left-width: 3px;
   }
   &:required:valid {
+    border: 1px solid ${colors.success};
     border-left-color: ${colors.success};
     border-left-width: 3px;
   }
   &:focus:valid {
+    border: 1px solid ${colors.success};
     box-shadow: ${colors.success} 0 0 8px;
-    outline: none;
+    border-left-color: ${colors.success};
+    border-left-width: 3px;
   }
 `;
 
