@@ -13,7 +13,7 @@ Config.getInstance().init(amplifyConfig);
 const AppWrapper = () => {
   const [isAuth, setIsAuth] = useState<boolean>(false);
   return (
-    <React.Fragment>
+    <React.StrictMode>
       <GlobalStyle />
       <Authenticator
         usernameAttributes={UsernameAttributes.EMAIL}
@@ -22,7 +22,7 @@ const AppWrapper = () => {
       >
         {isAuth && <App />}
       </Authenticator>
-    </React.Fragment>
+    </React.StrictMode>
   );
 };
 

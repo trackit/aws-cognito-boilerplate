@@ -1,5 +1,8 @@
 import { AmplifyConfig } from "shared/interfaces/amplify.interface";
 
+/*
+  To add more fields check the following link: https://aws-amplify.github.io/docs/js/authentication#manual-setup
+*/
 export const amplifyConfig: AmplifyConfig = {
   Auth: {
     identityPoolId: process.env.REACT_APP_IDENTITY_POOL_ID,
