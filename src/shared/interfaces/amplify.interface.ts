@@ -42,6 +42,7 @@ export enum AuthState {
   SIGNED_IN = "signedIn",
 }
 
+// TODO: Complete this interface
 export interface SignUpFields {
 
 }
