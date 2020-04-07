@@ -1,4 +1,6 @@
-// Used by Auth
+/**
+ * Used by Auth
+ */
 interface CookieStorage {
   domain: string | undefined;
   path?: string | undefined;
@@ -6,7 +8,9 @@ interface CookieStorage {
   secure?: boolean;
 }
 
-// Used by Auth
+/**
+ * Used by Auth
+ */
 interface Oauth {
   domain: string | undefined;
   scope: [string | undefined];
@@ -15,7 +19,9 @@ interface Oauth {
   responseType: string | undefined;
 }
 
-// Used by AmplifyConfig
+/**
+ * Used by AmplifyConfig
+ */
 interface Auth {
   identityPoolId: string | undefined;
   region: string | undefined;
@@ -30,7 +36,9 @@ interface Auth {
   oauth?: Oauth;
 }
 
-// Used by isAuthenticated utility
+/**
+ * Used by isAuthenticated utility
+ */
 export enum AuthState {
   SIGN_IN = "signIn",
   SIGN_UP = "signUp",
@@ -42,12 +50,16 @@ export enum AuthState {
   SIGNED_IN = "signedIn",
 }
 
-// TODO: Complete this interface
+/**
+ * TODO: Complete this interface
+ */
 export interface SignUpFields {
 
 }
 
-// Used by Amplify.configure()
+/**
+ * Used by Amplify.configure()
+ */
 export interface AmplifyConfig {
   Auth: Auth;
   language?: string;
