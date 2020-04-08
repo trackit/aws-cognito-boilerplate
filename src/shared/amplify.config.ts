@@ -1,8 +1,10 @@
 import { AmplifyConfig } from "shared/interfaces/amplify.interface";
 
-/*
-  To add more fields check the following link: https://aws-amplify.github.io/docs/js/authentication#manual-setup
-*/
+/**
+ * This object is used by Config.getInstance().init()
+ * or Amplify.configure() method.
+ * To add more fields check the following link: https://aws-amplify.github.io/docs/js/authentication#manual-setup
+ */
 export const amplifyConfig: AmplifyConfig = {
   Auth: {
     identityPoolId: process.env.REACT_APP_IDENTITY_POOL_ID,
@@ -13,6 +15,10 @@ export const amplifyConfig: AmplifyConfig = {
   language: 'us'
 };
 
+/**
+ * This object is used by Authenticator signUpConfig property
+ * to configure signUp form
+ */
 export const signUpConfig = {
   header: "",
   hideAllDefaults: true,
@@ -33,7 +39,7 @@ export const signUpConfig = {
       displayOrder: 2,
       type: "password",
       placeholder: "Enter your password",
-    },
+    }
   ],
 };
 

@@ -10,6 +10,10 @@ export const colors: AppColors = {
   secondaryTextColor: "#4BB2F9",
 };
 
+/**
+ * All style rules passed to this function are applied globally 
+ * to the application 
+ */
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
