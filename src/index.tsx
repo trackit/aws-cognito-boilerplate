@@ -8,8 +8,6 @@ import { Authenticator, UsernameAttributes } from "aws-amplify-react";
 import "@aws-amplify/ui/dist/style.css";
 import App from "App";
 
-Config.getInstance().init(amplifyConfig);
-
 const AppWrapper = () => {
   const [isAuth, setIsAuth] = useState<boolean>(false);
   return (
@@ -26,7 +24,11 @@ const AppWrapper = () => {
   );
 };
 
-ReactDOM.render(<AppWrapper />, document.getElementById("root"));
+// Wait for Amplify configuration apply
+(async () => {
+  await Config.getInstance().init(amplifyConfig);
+  ReactDOM.render(<AppWrapper />, document.getElementById("root"));
+})();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

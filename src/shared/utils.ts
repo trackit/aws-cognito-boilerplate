@@ -42,8 +42,19 @@ export class Config extends Amplify {
    * @example
    * Config.getInstance().init(amplifyConfig)
    */
-  public init(amplifyConfig: AmplifyConfig) {
-    Config.configure(amplifyConfig);
-    Config.I18n.setLanguage(amplifyConfig.language || "us");
+  public async init(amplifyConfig: AmplifyConfig) {
+    try {
+      /**
+       * We unfornately have to apply this workaround because Webpack performs 
+       * a static analyse at build time. It doesn't try to infer variables.
+       * For more information check this issue: https://github.com/webpack/webpack/issues/6680#issuecomment-370800037
+       */
+      const name = 'aws-exports'
+      const module = await import(`../${name}`);
+      Config.configure(module);
+    } catch (error) {
+      Config.configure(amplifyConfig);
+      Config.I18n.setLanguage(amplifyConfig.language || "us");
+    }
   }
 }
