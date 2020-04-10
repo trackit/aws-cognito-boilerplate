@@ -1,11 +1,61 @@
 /**
- * Used by colors
+ * Used by Colors
  */
-export interface AppColors {
-  primary: string;
-  secondary: string;
-  success: string;
-  dark: string;
-  primaryTextColor: string;
-  secondaryTextColor: string;
+interface Elevation {
+  "50": string;
+  "100": string;
+  "200": string;
+  "300": string;
+  "400": string;
+  "500": string;
+  "600": string;
+  "700": string;
+  "800": string;
+  "900": string;
+  a100?: string;
+  a200?: string;
+  a400?: string;
+  a700?: string;
 }
+
+export interface AppColors {
+  red: Elevation;
+  pink: Elevation;
+  purple: Elevation;
+  deeppurple: Elevation;
+  indigo: Elevation;
+  blue: Elevation;
+  lightblue: Elevation;
+  cyan: Elevation;
+  teal: Elevation;
+  green: Elevation;
+  lightgreen: Elevation;
+  lime: Elevation;
+  yellow: Elevation;
+  amber: Elevation;
+  orange: Elevation;
+  deeporange: Elevation;
+  brown: Elevation;
+  grey: Elevation;
+  bluegrey: Elevation;
+} 
+
+/* export interface AppColors {
+  [ColorName: string]: {
+    "50": string;
+    "100": string;
+    "200": string;
+    "300": string;
+    "400": string;
+    "500": string;
+    "600": string;
+    "700": string;
+    "800": string;
+    "900": string;
+    a100?: string;
+    a200?: string;
+    a400?: string;
+    a700?: string;
+  };
+}
+ */

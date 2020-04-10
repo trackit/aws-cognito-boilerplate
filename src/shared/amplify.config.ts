@@ -1,4 +1,28 @@
-import { AmplifyConfig } from "shared/interfaces/amplify.interface";
+import { ReactNode } from "react";
+import { colors } from "./styles";
+import {
+  AmplifyConfig,
+  AmplifyTheme,
+  SignUpConfig,
+} from "shared/interfaces/amplify.interface";
+import { IAuthenticatorProps } from "aws-amplify-react/lib-esm/Auth/Authenticator";
+import { UsernameAttributes } from "aws-amplify-react";
+import "@aws-amplify/ui/dist/style.css";
+
+/**
+ * You can create your own theme and use it to render Amplify components
+ * Your custom theme must use the selectors from the following
+ * template: https://github.com/aws-amplify/amplify-js/blob/master/packages/aws-amplify-react/src/Amplify-UI/Amplify-UI-Theme.tsx
+ */
+const amplifyTheme: AmplifyTheme = {
+  container: { backgroundColor: colors.grey[900], justifyContent: "center" },
+};
+
+/**
+ * When using custom components you can hide default Amplify components here
+ * by adding them the amplifyHiddenComponents array
+ */
+const amplifyHiddenComponents: ReactNode[] = [];
 
 /**
  * This object is used by Config.getInstance().init()
@@ -12,17 +36,15 @@ export const amplifyConfig: AmplifyConfig = {
     userPoolId: process.env.REACT_APP_USER_POOL_ID,
     userPoolWebClientId: process.env.REACT_APP_USER_POOL_WEBCLIENT_ID,
   },
-  language: 'us'
+  language: "us",
 };
 
+// TODO
 /**
  * This object is used by Authenticator signUpConfig property
  * to configure signUp form
  */
-export const signUpConfig = {
-  header: "",
-  hideAllDefaults: true,
-  defaultCountryCode: "33",
+export const signUpCustomFiels: SignUpConfig = {
   signUpFields: [
     {
       label: "Email",
@@ -30,6 +52,7 @@ export const signUpConfig = {
       required: true,
       displayOrder: 1,
       type: "string",
+      custom: false,
       placeholder: "Enter your email",
     },
     {
@@ -38,9 +61,18 @@ export const signUpConfig = {
       required: true,
       displayOrder: 2,
       type: "password",
+      custom: false,
       placeholder: "Enter your password",
-    }
+    },
   ],
 };
 
-
+/**
+ * Used by Authenticator component as configuration
+ */
+export const authenticatorConfig: IAuthenticatorProps = {
+  theme: amplifyTheme,
+  usernameAttributes: UsernameAttributes.EMAIL,
+  hide: amplifyHiddenComponents,
+  signUpConfig: signUpCustomFiels,
+};
