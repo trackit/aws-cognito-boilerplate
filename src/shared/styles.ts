@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { AppColors } from "shared/interfaces/styles.interface";
+import { Colors, PlatteColors } from "shared/interfaces/styles.interface";
 
 /**
  * All style rules passed to this function are applied globally
@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
 /**
  * Colors based on material design color system
  */
-export const colors: AppColors = {
+export const colorPalette: PlatteColors = {
   red: {
     50: "#ffebee",
     100: "#ffcdd2",
@@ -314,4 +314,19 @@ export const colors: AppColors = {
     800: "#37474f",
     900: "#263238",
   },
+};
+
+/**
+ * Used for theming components and amplify
+ */
+export const colors: Colors = {
+  primary: "",
+  secondary: "",
+  primaryTextColor: "",
+  secondaryTextColor: "",
+  background: colorPalette.grey[900],
+  default: "",
+  success: "",
+  warning: "",
+  danger: "",
 };

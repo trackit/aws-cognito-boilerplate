@@ -18,7 +18,7 @@ interface Elevation {
   a700?: string;
 }
 
-export interface AppColors {
+export interface PlatteColors {
   red: Elevation;
   pink: Elevation;
   purple: Elevation;
@@ -38,7 +38,19 @@ export interface AppColors {
   brown: Elevation;
   grey: Elevation;
   bluegrey: Elevation;
-} 
+}
+
+export interface Colors {
+  primary: string;
+  secondary: string;
+  primaryTextColor: string;
+  secondaryTextColor: string;
+  background: string;
+  default: string;
+  success: string;
+  warning: string;
+  danger: string;
+}
 
 /* export interface AppColors {
   [ColorName: string]: {
