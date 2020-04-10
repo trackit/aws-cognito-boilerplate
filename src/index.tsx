@@ -1,12 +1,12 @@
-import * as serviceWorker from "./serviceWorker";
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "App";
-import { GlobalStyle } from "shared/styles";
 import { Authenticator } from "aws-amplify-react";
+import { GlobalStyle } from "shared/styles";
 import { Config, isAuthenticated } from "shared/utils";
 import { amplifyConfig, authenticatorConfig } from "shared/amplify.config";
 import { AuthState } from "shared/interfaces/amplify.interface";
+import * as serviceWorker from "./serviceWorker";
+import App from "App";
 
 const Guard = ({ authState }: { authState?: AuthState }) => {
   if (isAuthenticated(authState || "")) {
