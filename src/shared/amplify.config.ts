@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import { colors } from "./styles";
+import "@aws-amplify/ui/dist/style.css";
+import { UsernameAttributes } from "aws-amplify-react";
+import { IAuthenticatorProps } from "aws-amplify-react/lib-esm/Auth/Authenticator";
 import {
   AmplifyConfig,
   AmplifyTheme,
   SignUpConfig,
 } from "shared/interfaces/amplify.interface";
-import { IAuthenticatorProps } from "aws-amplify-react/lib-esm/Auth/Authenticator";
-import { UsernameAttributes } from "aws-amplify-react";
-import "@aws-amplify/ui/dist/style.css";
 
 /**
  * You can create your own theme and use it to render Amplify components
