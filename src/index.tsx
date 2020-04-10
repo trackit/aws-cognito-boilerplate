@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import { GlobalStyle } from "shared/styles";
-import { signUpConfig, amplifyConfig } from "shared/amplify.config";
-import { isAuthenticated, Config } from "shared/utils";
-import { Authenticator, UsernameAttributes } from "aws-amplify-react";
-import "@aws-amplify/ui/dist/style.css";
+import { amplifyConfig, authenticatorConfig } from "shared/amplify.config";
+import { Config, isAuthenticated } from "shared/utils";
+import { Authenticator } from "aws-amplify-react";
 import App from "App";
 
-const AppWrapper = () => {
-  const [isAuth, setIsAuth] = useState<boolean>(false);
+const Bootstrap = ({ authState }: any) => {
+  if (isAuthenticated(authState || "")) {
+    return <App />;
+  }
+  return null;
+};
+
+const CognitoBoilerplate = () => {
   return (
     <React.StrictMode>
       <GlobalStyle />
-      <Authenticator
-        usernameAttributes={UsernameAttributes.EMAIL}
-        signUpConfig={signUpConfig}
-        onStateChange={(authState) => setIsAuth(isAuthenticated(authState))}
-      >
-        {isAuth && <App />}
+      <Authenticator {...authenticatorConfig}>
+        <Bootstrap />
       </Authenticator>
     </React.StrictMode>
   );
@@ -27,7 +28,7 @@ const AppWrapper = () => {
 // Wait for Amplify configuration apply
 (async () => {
   await Config.getInstance().init(amplifyConfig);
-  ReactDOM.render(<AppWrapper />, document.getElementById("root"));
+  ReactDOM.render(<CognitoBoilerplate />, document.getElementById("root"));
 })();
 
 // If you want your app to work offline and load faster, you can change
