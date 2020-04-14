@@ -45,7 +45,7 @@ export const amplifyConfig: AmplifyConfig = {
  * to configure signUp form. Custom field is a flag which indicates whether or not the field is ‘custom’ in the User Pool.
  * For more informations check the following link: https://aws-amplify.github.io/docs/js/react#signup-configuration
  */
-export const signUpCustomFiels: SignUpCustomConfig = {
+export const signUpCustomConfig: SignUpCustomConfig = {
   signUpFields: [
     {
       label: "Email",
@@ -75,5 +75,5 @@ export const authenticatorConfig: IAuthenticatorProps = {
   theme: amplifyTheme,
   usernameAttributes: UsernameAttributes.EMAIL,
   hide: amplifyHiddenComponents,
-  signUpConfig: signUpCustomFiels,
+  signUpConfig: signUpCustomConfig,
 };
