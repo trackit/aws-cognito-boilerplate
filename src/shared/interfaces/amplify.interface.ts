@@ -55,7 +55,7 @@ export enum AuthState {
 /**
  * Used by SignUpConfig
  */
-interface SignUpFields {
+export interface SignUpFields {
   label: string;
   key: string;
   required: boolean;
