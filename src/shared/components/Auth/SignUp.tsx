@@ -21,9 +21,7 @@ class CustomSignUp extends SignUp {
     this.sortFields();
     return (
       <Form>
-        {this.props.signUpConfig?.header && (
-          <Logo src={this.props.signUpConfig.header} />
-        )}
+        {this.props.children}
         {this.signUpFields.map((field) => {
           return (
             field.key !== "phone_number" && (
