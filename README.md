@@ -96,7 +96,7 @@ const CognitoBoilerplate = () => {
     <React.StrictMode>
       <GlobalStyle />
       <Authenticator {...authenticatorConfig}>
-        <Bootstrap />
+        <Guard />
       </Authenticator>
     </React.StrictMode>
   );
