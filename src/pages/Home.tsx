@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "components";
+import { Container } from "shared/components/Auth/common";
 import styled from "styled-components";
 
 const HomeContainer = styled(Container)`
