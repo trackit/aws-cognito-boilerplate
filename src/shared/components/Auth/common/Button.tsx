@@ -23,6 +23,14 @@ const Button = styled.button`
     color: ${colors.secondaryTextColor};
     cursor: pointer;
   }
+  &:disabled {
+    opacity: 0.4;
+    color: ${colors.secondary};
+    background-color: inherit;
+  }
+  &:disabled:hover {
+    cursor: inherit;
+  }
 `;
 
 export default Button;

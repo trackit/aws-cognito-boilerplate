@@ -1,12 +1,17 @@
-import React from "react";
-import { SignIn } from "aws-amplify-react";
-import { IAuthPieceProps } from "aws-amplify-react/lib-esm/Auth/AuthPiece";
+import React, { MouseEvent } from "react";
+import { SignIn, UsernameAttributes } from "aws-amplify-react";
+import { ISignInProps } from "aws-amplify-react/lib-esm/Auth/SignIn";
 import { AmplifyTheme } from "shared/interfaces/amplify.interface";
-
-interface Props extends IAuthPieceProps {}
+import {
+  Form,
+  FormField,
+  CustomLink,
+  Input,
+  Button,
+} from "shared/components/Auth/common";
 
 class CustomSignIn extends SignIn {
-  constructor(props: Props) {
+  constructor(props: ISignInProps) {
     super(props);
     this._validAuthStates = ["signIn", "signedOut", "signedUp"];
     this.state = {
@@ -15,7 +20,48 @@ class CustomSignIn extends SignIn {
   }
 
   showComponent(theme: AmplifyTheme) {
-    return <h1>Custom Sign In</h1>;
+    return (
+      <Form>
+        {this.props.children}
+        <FormField>
+          <p>Email *</p>
+          <Input
+            theme={theme}
+            type={this.props.usernameAttributes}
+            id={this.props.usernameAttributes}
+            key={this.props.usernameAttributes}
+            name={this.props.usernameAttributes}
+            placeholder={
+              this.props.usernameAttributes === UsernameAttributes.EMAIL
+                ? "Your email address"
+                : "Your username"
+            }
+            onChange={this.handleInputChange}
+          />
+        </FormField>
+        <FormField>
+          <p>Password *</p>
+          <Input
+            theme={theme}
+            type="password"
+            id="password"
+            key="password"
+            name="password"
+            placeholder="Your password"
+            onChange={this.handleInputChange}
+          />
+        </FormField>
+        <Button
+          disabled={this.state.loading}
+          onClick={(ev: MouseEvent) => this.signIn(ev)}
+        >
+          Sign in
+        </Button>
+        <CustomLink onClick={() => this.changeState("signUp")}>
+          Don't have an account? Sign up
+        </CustomLink>
+      </Form>
+    );
   }
 }
 

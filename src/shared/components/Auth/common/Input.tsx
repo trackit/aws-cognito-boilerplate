@@ -5,7 +5,7 @@ const Input = styled.input`
   border: 1px solid grey;
   border-radius: 4px;
   box-sizing: border-box;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 14px;
   line-height: 18px;
   padding: 7px 10px;
@@ -31,6 +31,9 @@ const Input = styled.input`
     box-shadow: ${colors.success} 0 0 8px;
     border-left-color: ${colors.success};
     border-left-width: 3px;
+  }
+  &:disabled {
+    background: #ccc;
   }
 `;
 
