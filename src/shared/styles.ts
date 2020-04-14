@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
   }
 `;
 
@@ -22,13 +23,13 @@ export const GlobalStyle = createGlobalStyle`
  * Used for theming components and amplify
  */
 export const colors: Colors = {
-  primary: "",
-  secondary: "",
-  primaryTextColor: "",
-  secondaryTextColor: "",
-  background: "",
-  default: "",
-  success: "",
-  warning: "",
-  danger: "",
+  primary: "#FFF",
+  secondary: "#D83C38",
+  primaryTextColor: "#272C2E",
+  secondaryTextColor: "#FFF",
+  background: "#272C2E",
+  default: "#0366D6",
+  success: "#2CBD4D",
+  warning: "#F48025",
+  danger: "#EA5D55",
 };
