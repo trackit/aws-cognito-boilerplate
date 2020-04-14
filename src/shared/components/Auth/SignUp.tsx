@@ -22,13 +22,13 @@ class CustomSignUp extends SignUp {
     return (
       <Form>
         {this.props.signUpConfig?.header && (
-          <Logo src={this.props.signUpConfig?.header} />
+          <Logo src={this.props.signUpConfig.header} />
         )}
         {this.signUpFields.map((field) => {
           return (
             field.key !== "phone_number" && (
               <FormField key={field.key}>
-                {field.required ? <p>{field.label} *</p> : <p>{field.label}</p>}
+                <p>{field.required ? `${field.label} *` : field.label}</p>
                 <Input
                   autoFocus={
                     this.signUpFields.findIndex((f) => {
