@@ -14,7 +14,7 @@ import {
 class CustomSignUp extends SignUp {
   constructor(props: ISignUpProps) {
     super(props);
-    this._validAuthStates = ["signIn", "signUp"];
+    this._validAuthStates = ["signUp"];
     this.signUpFields = props.signUpConfig?.signUpFields || [];
   }
   showComponent(theme: AmplifyTheme) {
