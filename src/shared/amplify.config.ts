@@ -6,7 +6,7 @@ import { IAuthenticatorProps } from "aws-amplify-react/lib-esm/Auth/Authenticato
 import {
   AmplifyConfig,
   AmplifyTheme,
-  SignUpConfig,
+  SignUpCustomConfig,
 } from "shared/interfaces/amplify.interface";
 
 /**
@@ -42,9 +42,10 @@ export const amplifyConfig: AmplifyConfig = {
 
 /**
  * This object is used by Authenticator signUpConfig property
- * to configure signUp form
+ * to configure signUp form. Custom field is a flag which indicates whether or not the field is ‘custom’ in the User Pool.
+ * For more informations check the following link: https://aws-amplify.github.io/docs/js/react#signup-configuration
  */
-export const signUpCustomFiels: SignUpConfig = {
+export const signUpCustomFiels: SignUpCustomConfig = {
   signUpFields: [
     {
       label: "Email",

@@ -68,7 +68,7 @@ interface SignUpFields {
 /**
  * Used by customSignUpFields
  */
-export interface SignUpConfig {
+export interface SignUpCustomConfig {
   header?: string;
   defaultCountryCode?: string;
   signUpFields?: SignUpFields[];
