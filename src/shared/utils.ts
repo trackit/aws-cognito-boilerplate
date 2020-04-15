@@ -51,7 +51,7 @@ export class Config extends Amplify {
        */
       const name = 'aws-exports'
       const module = await import(`../${name}`);
-      Config.configure(module);
+      Config.configure(module.default);
     } catch (error) {
       Config.configure(amplifyConfig);
       Config.I18n.setLanguage(amplifyConfig.language || "us");
