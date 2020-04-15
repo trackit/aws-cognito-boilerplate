@@ -22,6 +22,10 @@ class CustomSignIn extends SignIn {
   showComponent(theme: AmplifyTheme) {
     return (
       <Form>
+        {/**
+         * As a workaround we use a children because we can't add
+         * more props from the time that SignIn class is not a generic class.
+         */}
         {this.props.children}
         <FormField>
           <label htmlFor={this.props.usernameAttributes}>Email *</label>
