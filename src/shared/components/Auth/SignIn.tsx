@@ -24,9 +24,10 @@ class CustomSignIn extends SignIn {
       <Form>
         {this.props.children}
         <FormField>
-          <p>Email *</p>
+          <label htmlFor={this.props.usernameAttributes}>Email *</label>
           <Input
             theme={theme}
+            autoFocus={true}
             type={this.props.usernameAttributes}
             id={this.props.usernameAttributes}
             key={this.props.usernameAttributes}
@@ -40,7 +41,7 @@ class CustomSignIn extends SignIn {
           />
         </FormField>
         <FormField>
-          <p>Password *</p>
+          <label htmlFor="password">Password *</label>
           <Input
             theme={theme}
             type="password"
