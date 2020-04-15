@@ -9,7 +9,14 @@ import {
   FormField,
   Logo,
   CustomLink,
+  Container
 } from "shared/components/Auth/common";
+import styled from "styled-components";
+
+const SingUpContainer = styled(Container)`
+  justify-content: center;
+  align-items: center;
+`;
 
 class CustomSignUp extends SignUp {
   constructor(props: ISignUpProps) {
