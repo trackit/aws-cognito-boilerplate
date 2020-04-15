@@ -8,7 +8,14 @@ import {
   CustomLink,
   Input,
   Button,
+  Container,
 } from "shared/components/Auth/common";
+import styled from "styled-components";
+
+const SingInContainer = styled(Container)`
+  justify-content: center;
+  align-items: center;
+`;
 
 class CustomSignIn extends SignIn {
   constructor(props: ISignInProps) {
