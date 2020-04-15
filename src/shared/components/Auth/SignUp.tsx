@@ -28,8 +28,11 @@ class CustomSignUp extends SignUp {
           return (
             field.key !== "phone_number" && (
               <FormField key={field.key}>
-                <p>{field.required ? `${field.label} *` : field.label}</p>
+                <label htmlFor={field.key}>
+                  {field.required ? `${field.label} *` : field.label}
+                </label>
                 <Input
+                  id={field.key}
                   autoFocus={
                     this.signUpFields.findIndex((f) => {
                       return f.key === field.key;
