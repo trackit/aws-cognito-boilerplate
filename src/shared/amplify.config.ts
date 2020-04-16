@@ -15,7 +15,7 @@ import {
  * template: https://github.com/aws-amplify/amplify-js/blob/master/packages/aws-amplify-react/src/Amplify-UI/Amplify-UI-Theme.tsx
  */
 const amplifyTheme: AmplifyTheme = {
-  container: { backgroundColor: colors.background, justifyContent: "center" },
+  container: { backgroundColor: colors.background },
 };
 
 /**
@@ -38,7 +38,6 @@ export const amplifyConfig: AmplifyConfig = {
   },
   language: "us",
 };
-
 
 /**
  * This object is used by Authenticator signUpConfig property
