@@ -16,16 +16,18 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "remove": "^0.1.5",
     "styled-components": "^5.0.1",
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts build",
+    "test": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts test",
+    "eject": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts eject",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "ci": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,7 +48,9 @@
     "@bahmutov/add-typescript-to-cypress": "^2.1.2",
     "@types/styled-components": "^5.0.1",
     "add": "^2.0.6",
+    "cross-env": "^7.0.2",
     "cypress": "^4.3.0",
+    "start-server-and-test": "^1.11.0",
     "webpack": "^4.42.1",
     "yarn": "^1.22.4"
   }
