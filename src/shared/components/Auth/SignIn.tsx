@@ -62,7 +62,14 @@ class CustomSignIn extends SignIn {
               name="password"
               placeholder="Your password"
               onChange={this.handleInputChange}
+              style={{ marginBottom: "10px" }}
             />
+            <CustomLink
+              style={{ margin: "0 0 10px", fontSize: "0.8rem" }}
+              onClick={() => this.changeState("forgotPassword")}
+            >
+              Forget your password ? Reset password
+            </CustomLink>
           </FormField>
           <Button
             disabled={this.state.loading}
