@@ -11,11 +11,13 @@ import {
   CustomLink,
   Container,
 } from "shared/components/Auth/common";
-import { capitalizeFirstLetter } from "shared/utils";
 
 const CustomForgotPasswordContainer = styled(Container)`
   justify-content: center;
   align-items: center;
+  label {
+    text-transform: capitalize;
+  }
 `;
 
 class CustomForgotPassword extends ForgotPassword {
@@ -28,7 +30,7 @@ class CustomForgotPassword extends ForgotPassword {
     return (
       <FormField>
         <label htmlFor={this.props.usernameAttributes}>
-          {capitalizeFirstLetter(this.props.usernameAttributes || "")} *
+          {this.props.usernameAttributes || ""} *
         </label>
         <Input
           autoFocus
