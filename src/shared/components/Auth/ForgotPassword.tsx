@@ -96,6 +96,7 @@ class CustomForgotPassword extends ForgotPassword {
             : this.renderRequestCode(theme)}
           {this.state.delivery || this.props.authData?.username ? (
             <Button
+              data-test="forgot-password-send-code-button"
               theme={theme}
               onClick={(ev) => {
                 this.submit();
@@ -106,6 +107,7 @@ class CustomForgotPassword extends ForgotPassword {
             </Button>
           ) : (
             <Button
+              data-test="forgot-password-send-code-button"
               theme={theme}
               onClick={(ev) => {
                 this.send();
@@ -115,7 +117,10 @@ class CustomForgotPassword extends ForgotPassword {
               Send Code
             </Button>
           )}
-          <CustomLink onClick={() => this.changeState("signIn")}>
+          <CustomLink
+            data-test="forgot-password-back-to-sign-in-link"
+            onClick={() => this.changeState("signIn")}
+          >
             Back to Sign In
           </CustomLink>
         </Form>
