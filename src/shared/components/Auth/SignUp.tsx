@@ -62,6 +62,7 @@ class CustomSignUp extends SignUp {
             );
           })}
           <Button
+            data-test="sign-up-create-account-button"
             disabled={this.state.requestPending}
             onClick={(ev) => {
               ev.preventDefault();
@@ -70,7 +71,10 @@ class CustomSignUp extends SignUp {
           >
             Sign Up
           </Button>
-          <CustomLink onClick={() => this.changeState("signIn")}>
+          <CustomLink
+            data-test="sign-up-sign-in-link"
+            onClick={() => this.changeState("signIn")}
+          >
             Have an account? Sign In
           </CustomLink>
         </Form>

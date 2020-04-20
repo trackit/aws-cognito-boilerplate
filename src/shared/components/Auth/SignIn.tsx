@@ -65,6 +65,7 @@ class CustomSignIn extends SignIn {
               style={{ marginBottom: "10px" }}
             />
             <CustomLink
+              data-test="sign-in-forgot-password-link"
               style={{ margin: "0 0 10px", fontSize: "0.8rem" }}
               onClick={() => this.changeState("forgotPassword")}
             >
@@ -72,12 +73,16 @@ class CustomSignIn extends SignIn {
             </CustomLink>
           </FormField>
           <Button
+            data-test="sign-in-sign-in-button"
             disabled={this.state.loading}
             onClick={(ev: MouseEvent) => this.signIn(ev)}
           >
             Sign in
           </Button>
-          <CustomLink onClick={() => this.changeState("signUp")}>
+          <CustomLink
+            data-test="sign-in-create-account-link"
+            onClick={() => this.changeState("signUp")}
+          >
             Don't have an account? Sign up
           </CustomLink>
         </Form>
