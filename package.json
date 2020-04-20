@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@bahmutov/add-typescript-to-cypress": "^2.1.2",
+    "@testing-library/cypress": "^6.0.0",
     "@types/styled-components": "^5.0.1",
     "add": "^2.0.6",
     "cross-env": "^7.0.2",
