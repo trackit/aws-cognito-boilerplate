@@ -4,21 +4,29 @@ AWS boilerplate with AWS Cognito
 
 ## Infrastructure
 
-![Access AWS Services with a User Pool and an Identity Pool](https://docs.aws.amazon.com/cognito/latest/developerguide/images/scenario-identity-pool.png)
-
-## Tests
-
-Run Cypress whitout GUI using `yarn run cy:run or npm run cy:run`
-Run Cypress with GUI using `yarn run cy:open or npm run cy:open`
+![Access AWS Services with a User Pool and an Identity Pool](./aws-cognito-boilerplate.png)
 
 ## Configuration
 
 .env file is by default present in .gitignore file.
-You must copy the template from example.env file to make sure app retrieve needed variables.
+You must rename .sample.env to .env and fill variables to make sure app retrieve them.
 
 ### Install dependencies
 
-`yarn or npm install`
+```bash
+$ yarn or npm install
+```
+
+### Tests
+
+Run Cypress whitout GUI using 
+```bash
+$ yarn run cy:run or npm run cy:run
+```
+Run Cypress with GUI using 
+```bash
+$ yarn run cy:open or npm run cy:open
+```
 
 ### Amplify authentication configuration
 
@@ -51,7 +59,7 @@ export interface AmplifyConfig {
 }
 ```
 
-By default we provide inside `example.env` the required object by Amplify for the authentication configuration but if you need to add custom settings feel free to add them inside your environment file.
+By default we provide inside `.sample.env` the required object by Amplify for the authentication configuration but if you need to add custom settings feel free to add them inside your environment file.
 
 If you need to add a new service, for instance storage service (Amazon S3) you can create a new entry to the amplifyConfig object and create a new interface.
 i.e:
