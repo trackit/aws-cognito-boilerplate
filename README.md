@@ -1,15 +1,33 @@
-# aws-cognito-boilerplate
+# aws-cognito-amplify-video
 
-AWS Cognito boilerplate using amplify-js
+This project is a fork of [aws-cognito-boilerplate](https://github.com/trackit/aws-cognito-boilerplate)
 
 ## Infrastructure
 
-![Access AWS Services with a User Pool and an Identity Pool](./aws-cognito-boilerplate.png)
+![Access AWS Services with a User Pool and an Identity Pool](aws-cognito-amplify-video.png)
+
+### What's new ?
+
+We added the followings in the the original boilerplate:
+- [amplify-video](https://github.com/awslabs/amplify-video)
+- [Admin queries](https://docs.amplify.aws/cli/auth/admin)
+- Role-based user access control using Cognito groups
+
+To edit current amplify video configuration run:
+
+```bash
+$ amplify video update
+```
+
+To edit current amplify auth configuration run:
+```bash
+$ amplify auth update
+```
 
 ## Configuration
 
 .env file is by default present in .gitignore file.
-You must have to rename .sample.env to .env and fill variables to make sure that the application retrieve them
+You must rename .sample.env to .env and fill variables to make sure app retrieve them.
 
 ### Install dependencies
 
