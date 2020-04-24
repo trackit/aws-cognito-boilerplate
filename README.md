@@ -1,6 +1,6 @@
-# aws-boilerplate-cognito
+# aws-cognito-boilerplate
 
-AWS boilerplate with AWS Cognito
+AWS Cognito boilerplate using amplify-js
 
 ## Infrastructure
 
