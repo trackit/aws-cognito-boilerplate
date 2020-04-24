@@ -27,6 +27,7 @@
     "build": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "eject": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts eject",
+    "deploy": "npm run build && aws s3 sync build/ s3://aws-cognito-amplify-video-demo",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
   },
