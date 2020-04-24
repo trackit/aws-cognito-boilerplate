@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-cognitovideodemo-dev-105635-authRole",
+            "UnauthRoleArn": "arn:aws:iam::394125495069:role/amplify-cognitovideodemo-dev-105635-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::394125495069:role/amplify-cognitovideodemo-dev-105635-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-cognitovideodemo-dev-105635-deployment",
+            "UnauthRoleName": "amplify-cognitovideodemo-dev-105635-unauthRole",
+            "StackName": "amplify-cognitovideodemo-dev-105635",
+            "StackId": "arn:aws:cloudformation:us-west-2:394125495069:stack/amplify-cognitovideodemo-dev-105635/836eb640-8609-11ea-917b-022a2754311a",
+            "AmplifyAppId": "d2ks83i2878rxe"
+        },
+        "categories": {
+            "auth": {
+                "cognitovideodemob61a7cf0": {}
+            }
+        }
+    }
+}

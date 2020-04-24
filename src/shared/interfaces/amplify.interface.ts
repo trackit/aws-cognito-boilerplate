@@ -60,7 +60,7 @@ export interface SignUpFields {
   key: string;
   required: boolean;
   displayOrder: number;
-  type: 'email' | 'password' | 'username' | 'string';
+  type: "email" | "password" | "username" | "string";
   custom: boolean;
   placeholder: string;
 }
@@ -128,4 +128,23 @@ export interface AmplifyTheme {
   navRight?: CSS.Properties;
   navItem?: CSS.Properties;
   navButton?: CSS.Properties;
+}
+
+export interface AddToGroup {
+  apiName: string;
+  path: string;
+  username: string;
+  groupname: string;
+}
+
+export interface AuthData {
+  username: string;
+  signInUserSession: {
+    idToken: { payload: { [key: string]: any } };
+  };
+  attributes: {
+    sub: string;
+    email: string;
+    email_verified: boolean;
+  };
 }

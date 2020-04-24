@@ -16,9 +16,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "react-toast-notifications": "^2.4.0",
     "remove": "^0.1.5",
     "styled-components": "^5.0.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "video.js": "^7.7.5"
   },
   "scripts": {
     "start": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts start",
@@ -45,7 +47,9 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^6.0.0",
+    "@types/react-toast-notifications": "^2.4.0",
     "@types/styled-components": "^5.0.1",
+    "@types/video.js": "^7.3.8",
     "add": "^2.0.6",
     "cross-env": "^7.0.2",
     "cypress": "^4.4.0",

@@ -1,7 +1,13 @@
 import { ReactNode } from "react";
 import { colors } from "./styles";
 import "@aws-amplify/ui/dist/style.css";
-import { UsernameAttributes } from "aws-amplify-react";
+import {
+  UsernameAttributes,
+  SignIn,
+  SignUp,
+  ConfirmSignUp,
+  ForgotPassword,
+} from "aws-amplify-react";
 import { IAuthenticatorProps } from "aws-amplify-react/lib-esm/Auth/Authenticator";
 import {
   AmplifyConfig,
@@ -15,14 +21,37 @@ import {
  * template: https://github.com/aws-amplify/amplify-js/blob/master/packages/aws-amplify-react/src/Amplify-UI/Amplify-UI-Theme.tsx
  */
 const amplifyTheme: AmplifyTheme = {
-  container: { backgroundColor: colors.background },
+  container: { backgroundColor: colors.background, color: "white" },
+  navBar: { backgroundColor: "transparent", borderColor: "transparent" },
+  navButton: {
+    backgroundColor: "transparent",
+    border: `2px solid ${colors.secondary}`,
+    borderRadius: "50px",
+    boxShadow: "none",
+    boxSizing: "border-box",
+    color: colors.secondary,
+    fontSize: "14px",
+    fontWeight: 700,
+    height: "48px",
+    letterSpacing: "1px",
+    lineHeight: "46px",
+    outline: "none",
+    padding: "0 28px",
+    textTransform: "uppercase",
+    transition: "all 0.3s",
+  },
 };
 
 /**
  * When using custom components you can hide default Amplify components here
  * by adding them the amplifyHiddenComponents array
  */
-const amplifyHiddenComponents: ReactNode[] = [];
+const amplifyHiddenComponents: ReactNode[] = [
+  SignIn,
+  SignUp,
+  ConfirmSignUp,
+  ForgotPassword,
+];
 
 /**
  * This object is used by Config.getInstance().init()
@@ -45,6 +74,7 @@ export const amplifyConfig: AmplifyConfig = {
  * For more informations check the following link: https://aws-amplify.github.io/docs/js/react#signup-configuration
  */
 export const signUpCustomConfig: SignUpCustomConfig = {
+  hiddenDefaults: ["phone_number"],
   signUpFields: [
     {
       label: "Email",

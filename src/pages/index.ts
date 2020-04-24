@@ -1,5 +1,7 @@
-import Home from './Home';
+import AdminView from './AdminView';
+import UsersView from './UsersView';
 
 export {
-    Home
+    AdminView,
+    UsersView
 }
