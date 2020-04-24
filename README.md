@@ -9,7 +9,7 @@ AWS Cognito boilerplate using amplify-js
 ## Configuration
 
 .env file is by default present in .gitignore file.
-You must rename .sample.env to .env and fill variables to make sure app retrieve them.
+You must have to rename .sample.env to .env and fill variables to make sure that the application retrieve them
 
 ### Install dependencies
 
