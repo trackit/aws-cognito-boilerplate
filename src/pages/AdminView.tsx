@@ -113,6 +113,7 @@ const AdminView = () => {
       await adminQueries.post({ groupname: "users", username }, path);
       addToast("Added Successfully", { appearance: "success" });
     } catch (error) {
+      console.log("error", error);
       addToast("Arghhh...", { appearance: "error" });
     } finally {
       setLoading(false);
@@ -139,6 +140,7 @@ const AdminView = () => {
         const result = await adminQueries.get({ groupname: "users" }, path);
         groupname ? setAllowedUsers(result.Users) : setAllUsers(result.Users);
       } catch (error) {
+        console.log("listUsersInGroup error", error);
         addToast("Arghhh...", { appearance: "error" });
       }
     };
